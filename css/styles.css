@@ -10,6 +10,7 @@
     --button-hover-color:#FFFFFF;
     --icons-customer-color:#AFB1B8;
     --icon-secondery-hover-color: #31D0AA;
+    --modal-text-color: #8E8F99;
     --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -22,6 +23,8 @@ font-family: Roboto, sans-serif;
 font-size: 16px;
 line-height: 1.5;
 letter-spacing: 0.02em;
+
+box-sizing: border-box;
 }
 
 section{
@@ -64,12 +67,12 @@ img {
     height: auto;
 }
 
-.flex {
-    display: flex;
-}
-
 body.overflow {
     overflow: hidden;
+}
+
+.flex {
+    display: flex;
 }
 
 .container {
@@ -486,12 +489,57 @@ transition: color 250ms var(--cubic);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--accent-text-color);
     transition: background-color 250ms var(--cubic);
 }
 
 .footer-link-icon{
     fill: var(--secondary-bg-color);
+}
+
+.footer-subscribe {
+    margin-left: 80px;
+}
+
+.footer-subscribe-block {
+    display: flex;
+    margin-top: 16px;
+}
+
+.footer-button {
+    margin-left: 24px;
+    height: 40px;
+    padding: auto;
+}
+
+.button.primary.footer-button {
+    padding: 10px 24px;
+}
+
+.flex-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .flex-button1 {
+    align-items: center;
+    justify-content: center;
+} */
+
+.airplane-icon{
+    fill: var(--primary-bg-color);
+    margin-left: 16px;
+}
+
+.footer-input {
+    width: 264px;
+    height: 40px;
+    border: 1px solid #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    background-color: transparent;
+    padding-left: 15px;
 }
 
 /* modal */
@@ -503,14 +551,18 @@ transition: color 250ms var(--cubic);
     position: fixed;
     top: 0;
     left: 0;
-    
+    overflow: auto;
+    /* opacity: 0;
+    visibility: hidden; */
+    /* transition: transform 2500ms var(--cubic); */
 }
 
 
 .modal{
-    width: 500px;
+    width: 408px;
     max-width: 100%;
-    min-height: 600px;
+    height: 584px;
+    max-height: 100vh;
     background-color: var(--primary-bg-color);
     padding: 72px 24px 24px 24px;
 
@@ -522,7 +574,7 @@ transition: color 250ms var(--cubic);
 }
 
 .backdrop.is-hidden > .modal{
-    transform: translate(-50%, -50%) scale(0.6);
+    transform: translate(-50%, -50%) scale(0.4);
 }
 
 .modal-buttom{
@@ -559,6 +611,98 @@ transition: color 250ms var(--cubic);
     display: flex;
     flex-direction: column;
 
+    font-size: 12px;
+    line-height: 1.17;
+    color: var(--modal-text-color);
+}
+
+
+.modal-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--hero-bg-color);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 16px;
+
+}
+
+.modal-label {
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.modal-icon {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    transition: fill 250ms var(--cubic);  
+}
+
+.input:hover,
+.input:focus {
+    border: 1px solid var(--hover-color);
+}
+
+.input:hover + .modal-icon,
+.input:focus + .modal-icon {
+    fill: var(--hover-color);
+}
+
+.input{
+    width: 100%;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    height: 40px;
+    margin-top: 4px;
+    padding: 5px 5px 5px 35px;
+    line-height: 40px;
+    transition: border 250ms var(--cubic);
+}
+
+.textarea {
+    height: 120px;
+    padding-left: 16px;
+    margin-bottom: 16px;
+
+}
+
+.modal-checkbox-block {
+    margin-bottom: 24px;
+}
+
+/* .input::placeholder {} */
+
+.modal-checkbox {
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox-icon {
+    opacity: 0;
+    fill: var(--primary-bg-color);
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-none:checked + .modal-checkbox {
+    background-color: var(--hover-color);
+    fill: var(--primary-bg-color);
+}
+
+.checkbox-none:checked +.modal-checkbox > svg {
+    opacity: 1;
+}
+
+.modal-link-polic{
+    text-decoration: underline;
+    color: var(--accent-text-color);
 }
 
 /*Portfolio*/
@@ -576,6 +720,10 @@ transition: color 250ms var(--cubic);
 
 .button-item:not(:last-child) {
     margin-right: 24px;
+}
+
+.fg {
+    margin: 0 auto;
 }
 
 .project-list {
