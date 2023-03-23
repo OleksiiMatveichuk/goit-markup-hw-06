@@ -533,6 +533,7 @@ transition: color 250ms var(--cubic);
 }
 
 .footer-input {
+    color: var(--primary-bg-color);
     width: 264px;
     height: 40px;
     border: 1px solid #FFFFFF;
@@ -581,6 +582,7 @@ transition: color 250ms var(--cubic);
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: #E7E9FC;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -640,7 +642,8 @@ transition: color 250ms var(--cubic);
 
 .input:hover,
 .input:focus {
-    border: 1px solid var(--hover-color);
+    border-color: var(--hover-color);
+    outline: transparent;
 }
 
 .input:hover + .modal-icon,
@@ -673,6 +676,7 @@ transition: color 250ms var(--cubic);
 /* .input::placeholder {} */
 
 .modal-checkbox {
+    margin-right: 7px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 2px;
     width: 16px;
@@ -703,6 +707,11 @@ transition: color 250ms var(--cubic);
     color: var(--accent-text-color);
 }
 
+.modal-btn-send {
+    margin: 0 auto;
+    min-width: 170px;
+}
+
 /*Portfolio*/
 
 .project-primary{
@@ -718,10 +727,6 @@ transition: color 250ms var(--cubic);
 
 .button-item:not(:last-child) {
     margin-right: 24px;
-}
-
-.fg {
-    margin: 0 auto;
 }
 
 .project-list {
